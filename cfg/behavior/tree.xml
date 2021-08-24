@@ -1,0 +1,16 @@
+ <root main_tree_to_execute = "AFL_BT" >
+   <BehaviorTree ID="AFL_BT">
+    <Sequence name="root_sequence">
+      <WaitForPalletDetection
+        name="WaitForPalletDetection"
+        PalletDetectionTopic="/detected_object_front"
+        PalletPose="{DetectedPalletPose}"/>
+      <RaiseForkActionNode
+        name="RaiseForkActionNode"
+        PalletPose="{DetectedPalletPose}"/>
+      <MoveActionNode
+        name="MoveActionNode"
+        TargetPose="{DetectedPalletPose}"/>
+    </Sequence>
+   </BehaviorTree>
+ </root>

@@ -1,0 +1,9 @@
+<launch>
+  <node pkg="afl_behavior_tree" type="afl_behavior_tree" name="afl_behavior_tree"
+      output="screen">
+    <param name="treeConfigPath"
+        value="$(find pallet_pickup_demo)/cfg/behavior/tree.xml"/>
+    <rosparam command="load"
+        file="$(find pallet_pickup_demo)/cfg/behavior/parameters.yaml"/>
+  </node>
+</launch>
