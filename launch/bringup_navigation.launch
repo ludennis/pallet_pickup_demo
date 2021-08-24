@@ -1,0 +1,29 @@
+<launch>
+  <arg name="base_global_planner" default="global_planner/GlobalPlanner"/>
+  <arg name="base_local_planner" default="teb_local_planner/TebLocalPlannerROS"/>
+  <arg name="planner_frequency" default="1.0"/>
+  <arg name="planner_patience" default="5.0"/>
+  <arg name="controller_frequency" default="10.0"/>
+  <arg name="controller_patience" default="15.0"/>
+
+  <node pkg="move_base" type="move_base" name="move_base" respawn="false"
+      output="screen">
+    <rosparam command="load" ns="global_costmap"
+        file="$(find navigation_demo)/cfg/carlike/costmap_common_params.yaml"/>
+    <rosparam command="load" ns="local_costmap"
+        file="$(find navigation_demo)/cfg/carlike/costmap_common_params.yaml"/>
+    <rosparam command="load"
+        file="$(find navigation_demo)/cfg/carlike/local_costmap_params.yaml"/>
+    <rosparam command="load"
+        file="$(find navigation_demo)/cfg/carlike/global_costmap_params.yaml"/>
+    <rosparam command="load"
+        file="$(find navigation_demo)/cfg/carlike/teb_local_planner_params.yaml"/>
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>
+    <param name="planner_frequency" value="$(arg planner_frequency)"/>
+    <param name="planner_patience" value="$(arg planner_patience)"/>
+    <param name="controller_frequency" value="$(arg controller_frequency)" />
+    <param name="controller_patience" value="$(arg controller_patience)" />
+  </node>
+</launch>

@@ -1,0 +1,35 @@
+#---standard pioneer footprint---
+# map_type: costmap
+transform_tolerance: 0.2
+footprint: [[-0.3,-0.55],[1.7,-0.55],[1.7,0.55],[-0.3,0.55]]
+
+obstacle_layer:
+  enabled: true
+  obstacle_range: 5.0
+  raytrace_range: 5.0
+  observation_persistence: 0.0
+  publish_voxel_map: false
+  observation_sources: laser_scan_left laser_scan_right
+  laser_scan_left:
+    data_type: LaserScan
+    topic: "/afl/laser_scan_left_filtered"
+    marking: true
+    clearing: true
+  laser_scan_right:
+    data_type: LaserScan
+    topic: "/afl/laser_scan_right_filtered"
+    marking: true
+    clearing: true
+
+inflation_layer:
+  enabled: true
+  robot_radius: 0.5
+  cost_scaling_factor: 5.0
+  inflation_radius: 1.4
+
+static_layer:
+  enabled: true
+  lethal_cost_threshold: 100
+  map_topic: "/map"
+  first_map_only: false
+  subscribe_to_updates: false
