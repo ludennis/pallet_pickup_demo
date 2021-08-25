@@ -7,7 +7,9 @@
         PalletPose="{DetectedPalletPose}"/>
       <RaiseForkActionNode
         name="RaiseForkActionNode"
-        PalletPose="{DetectedPalletPose}"/>
+        PalletPose="{DetectedPalletPose}"
+        PalletThickness="120"
+        PalletBottomPadding="10"/>
       <MoveActionNode
         name="MoveActionNode"
         TargetPose="{DetectedPalletPose}"/>
