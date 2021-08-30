@@ -3,7 +3,8 @@
     <Sequence name="root_sequence">
       <WaitForPalletDetection
         name="WaitForPalletDetection"
-        PalletDetectionTopic="/detected_object_front"
+        PalletTfName="pallet"
+        RobotTfName="fork_link"
         PalletPose="{DetectedPalletPose}"/>
       <RaiseForkActionNode
         name="RaiseForkActionNode"

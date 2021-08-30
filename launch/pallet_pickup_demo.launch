@@ -24,7 +24,9 @@
       output="screen"/>
 
   <include file="$(find pallet_pickup_demo)/launch/bringup_navigation.launch"/>
-  <include file="$(find pallet_pickup_demo)/launch/bringup_behavior_tree.launch"/>
+
+  <include file="$(find afl_detection)/launch/rs_l515_bringup.launch"/>
+  <include file="$(find afl_detection)/launch/detection_ai.launch"/>
 
   <node pkg="rviz" type="rviz" name="rviz"
       args="-d $(find pallet_pickup_demo)/cfg/pallet_pickup_demo.rviz"/>
