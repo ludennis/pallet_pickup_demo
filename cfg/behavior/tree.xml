@@ -4,7 +4,7 @@
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
-        RobotTfName="fork_link"
+        RobotTfName="back_footprint"
         PalletPose="{DetectedPalletPose}"/>
       <ForkActionNode
         name="RaiseForkActionNode"
