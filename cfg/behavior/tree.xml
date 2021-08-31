@@ -17,6 +17,10 @@
       <RaiseForkActionNode
         name="RaiseForkActionNodeByOffset"
         TargetHeightOffset="100"/>
+      <MoveActionNode
+        name="BackAwayFromPallet"
+        TargetPose="{DetectedPalletPose}"
+        BackAwayDistance="1500"/>
     </Sequence>
    </BehaviorTree>
  </root>
