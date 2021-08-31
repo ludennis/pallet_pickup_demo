@@ -21,6 +21,9 @@
         name="BackAwayFromPallet"
         TargetPose="{DetectedPalletPose}"
         BackAwayDistance="1500"/>
+      <RaiseForkActionNode
+        name="LowerForkCloseToGround"
+        TargetHeight="100"/>
     </Sequence>
    </BehaviorTree>
  </root>
