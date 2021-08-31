@@ -6,7 +6,7 @@
         PalletTfName="pallet"
         RobotTfName="fork_link"
         PalletPose="{DetectedPalletPose}"/>
-      <RaiseForkActionNode
+      <ForkActionNode
         name="RaiseForkActionNode"
         PalletPose="{DetectedPalletPose}"
         PalletThickness="120"
@@ -14,14 +14,14 @@
       <MoveActionNode
         name="MoveActionNode"
         TargetPose="{DetectedPalletPose}"/>
-      <RaiseForkActionNode
+      <ForkActionNode
         name="RaiseForkActionNodeByOffset"
         TargetHeightOffset="100"/>
       <MoveActionNode
         name="BackAwayFromPallet"
         TargetPose="{DetectedPalletPose}"
         BackAwayDistance="1500"/>
-      <RaiseForkActionNode
+      <ForkActionNode
         name="LowerForkCloseToGround"
         TargetHeight="100"/>
     </Sequence>
