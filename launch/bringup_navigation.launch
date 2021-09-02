@@ -9,15 +9,15 @@
   <node pkg="move_base" type="move_base" name="move_base" respawn="false"
       output="screen">
     <rosparam command="load" ns="global_costmap"
-        file="$(find navigation_demo)/cfg/carlike/costmap_common_params.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/carlike/costmap_common_params.yaml"/>
     <rosparam command="load" ns="local_costmap"
-        file="$(find navigation_demo)/cfg/carlike/costmap_common_params.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/carlike/costmap_common_params.yaml"/>
     <rosparam command="load"
-        file="$(find navigation_demo)/cfg/carlike/local_costmap_params.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/carlike/local_costmap_params.yaml"/>
     <rosparam command="load"
-        file="$(find navigation_demo)/cfg/carlike/global_costmap_params.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/carlike/global_costmap_params.yaml"/>
     <rosparam command="load"
-        file="$(find navigation_demo)/cfg/carlike/teb_local_planner_params.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/carlike/teb_local_planner_params.yaml"/>
 
     <param name="base_global_planner" value="$(arg base_global_planner)"/>
     <param name="base_local_planner" value="$(arg base_local_planner)"/>
