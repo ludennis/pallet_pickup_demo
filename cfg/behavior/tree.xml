@@ -1,10 +1,13 @@
  <root main_tree_to_execute = "AFL_BT" >
    <BehaviorTree ID="AFL_BT">
     <Sequence name="PickupPallet">
+      <ForkActionNode
+        name="DropFork"
+        TargetHeight="25"/>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
-        RobotTfName="back_footprint"
+        MapTfName="map"
         PalletPose="{DetectedPalletPose}"/>
       <ForkActionNode
         name="RaiseForkToPalletHeight"
@@ -14,7 +17,7 @@
       <MoveActionNode
         name="ApproachPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="200"/>
+        TargetPoseOffset="0.2"/>
       <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
