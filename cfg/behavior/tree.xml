@@ -3,7 +3,7 @@
     <Sequence name="PickupPallet">
       <ForkActionNode
         name="DropFork"
-        TargetHeight="25"/>
+        TargetHeight="0.025"/>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
@@ -12,8 +12,8 @@
       <ForkActionNode
         name="RaiseForkToPalletHeight"
         PalletPose="{DetectedPalletPose}"
-        PalletThickness="120"
-        PalletBottomPadding="10"/>
+        PalletThickness="0.12"
+        PalletBottomPadding="0.01"/>
       <MoveActionNode
         name="ApproachPallet"
         TargetPose="{DetectedPalletPose}"
@@ -21,17 +21,17 @@
       <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="-900"/>
+        TargetPoseOffset="-0.9"/>
       <ForkActionNode
         name="PickupPallet"
-        TargetHeightOffset="250"/>
+        TargetHeightOffset="0.25"/>
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="200"/>
+        TargetPoseOffset="0.2"/>
       <ForkActionNode
         name="LowerForkCloseToGround"
-        TargetHeight="100"/>
+        TargetHeight="0.1"/>
     </Sequence>
    </BehaviorTree>
  </root>
