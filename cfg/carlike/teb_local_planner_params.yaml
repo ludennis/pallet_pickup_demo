@@ -3,17 +3,17 @@ TebLocalPlannerROS:
   odom_topic: odom
 
   # Robot
-  max_vel_x: 1.0
-  max_vel_x_backwards: 0.4
+  max_vel_x: 0.5
+  max_vel_x_backwards: 0.5
   max_vel_theta: 0.8
-  acc_lim_x: 1.0
+  acc_lim_x: 0.5
   acc_lim_theta: 0.8
   is_footprint_dynamic: false
   use_proportional_saturation: false
   transform_tolerance: 0.5
 
   # Carlike robot parameters
-  min_turning_radius: 0.8
+  min_turning_radius: 0.55
   wheelbase: 1.5
   cmd_angle_instead_rotvel: false
 
@@ -23,8 +23,8 @@ TebLocalPlannerROS:
     line_end: [1.5, 0.0]
 
   # Goal Tolerance
-  xy_goal_tolerance: 0.1
-  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.05
+  yaw_goal_tolerance: 0.06
   free_goal_vel: false
   trans_stopped_vel: 0.1
   theta_stopped_vel: 0.1
@@ -40,8 +40,8 @@ TebLocalPlannerROS:
   allow_init_with_backwards_motion: true
   max_global_plan_lookahead_dist: 2.0
   global_plan_prune_distance: 1.0
-  force_reinit_new_goal_dist: 1.0
-  force_reinit_new_goal_angular: 0.78
+  force_reinit_new_goal_dist: 1.2
+  force_reinit_new_goal_angular: 0.85
   feasibility_check_no_poses: 0
   exact_arc_length: false
   publish_feedback: true
@@ -74,23 +74,23 @@ TebLocalPlannerROS:
   costmap_converter_rate: 5
 
   # Optimization
-  no_inner_iterations: 5
-  no_outer_iterations: 4
+  no_inner_iterations: 4
+  no_outer_iterations: 3
   optimization_activate: true
   optimization_verbose: false
   penalty_epsilon: 0.1
-  weight_max_vel_x: 1000
+  weight_max_vel_x: 100
   weight_max_vel_y: 0
-  weight_max_vel_theta: 1000
-  weight_acc_lim_x: 1000
+  weight_max_vel_theta: 100
+  weight_acc_lim_x: 100
   weight_acc_lim_y: 0
-  weight_acc_lim_theta: 1000
+  weight_acc_lim_theta: 100
   weight_kinematics_nh: 2000
-  weight_kinematics_forward_drive: 200
-  weight_kinematics_turning_radius: 500
+  weight_kinematics_forward_drive: 10
+  weight_kinematics_turning_radius: 20
   weight_optimaltime: 150
-  weight_shortest_path: 0
-  weight_obstacle: 2000
+  weight_shortest_path: 4000
+  weight_obstacle: 1000
   weight_inflation: 0.6
   weight_dynamic_obstacle: 1500
   weight_dynamic_obstacle_inflation: 0.6
@@ -102,7 +102,7 @@ TebLocalPlannerROS:
   # Homotopy Class Planner
   enable_homotopy_class_planning: false
   enable_multithreading: true
-  max_number_classes: 4
+  max_number_classes: 3
   max_number_plans_in_current_class: 1
   selection_cost_hysteresis: 1.0
   selection_prefer_initial_plan: 0.95

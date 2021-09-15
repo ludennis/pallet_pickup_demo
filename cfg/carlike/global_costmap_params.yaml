@@ -7,8 +7,8 @@ global_costmap:
   static_map: true
   rolling_window: false
   transform_tolerance: 0.5
-  witdth: 100.0
-  height: 100.0
+  witdth: 50.0
+  height: 50.0
   resolution: 0.1
 
   plugins:
