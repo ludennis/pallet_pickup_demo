@@ -25,7 +25,12 @@
   <node pkg="afl_local_planner" type="NaviController" name="navi_controller_node"
       output="screen"/>
 
-  <include file="$(find pallet_pickup_demo)/launch/bringup_navigation.launch"/>
+  <param name="velocity" value="0.6"/>
+  <param name="lookahead_distance" value="1.5"/>
+  <include file="$(find pallet_pickup_demo)/launch/bringup_navigation.launch">
+    <arg name="local_planner" value="afl_local_planner/AflLocalPlanner"/>
+  </include>
+
 
   <include file="$(find afl_detection)/launch/rs_l515_bringup.launch"/>
   <include file="$(find afl_detection)/launch/detection_ai.launch"/>
