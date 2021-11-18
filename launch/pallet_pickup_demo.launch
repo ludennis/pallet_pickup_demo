@@ -2,10 +2,12 @@
   <include file="$(find afl_bringup)/launch/bringup_afl.launch"/>
   <include file="$(find afl_sensors)/launch/bringup_sensors.launch"/>
 
-  <node pkg="map_server" type="map_server" name="map_server"
-      args="$(find pallet_pickup_demo)/maps/qlab.yaml">
-    <param name="frame_id" value="map"/>
-  </node>
+  <include file="$(find map_manager_server)/launch/map_manager_server.launch">
+    <arg name="open_modifier" value="true"/>
+    <arg name="map_path" value="$(find pallet_pickup_demo)/maps/q_lab.yaml"/>
+  </include>
+
+  <include file="$(find soter_way_points_navigation)/launch/way_points_navigation.launch"/>
 
   <node pkg="soter_global_localization" type="soter_global_localization_node"
       name="soter_global_localization_node" output="screen">
