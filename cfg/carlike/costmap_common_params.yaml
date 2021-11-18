@@ -23,9 +23,9 @@ obstacle_layer:
 
 inflation_layer:
   enabled: true
-  robot_radius: 0.2
+  robot_radius: 0.5
   cost_scaling_factor: 5.0
-  inflation_radius: 1.0
+  inflation_radius: 1.5
 
 static_layer:
   enabled: true
