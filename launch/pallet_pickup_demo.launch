@@ -31,8 +31,10 @@
     <arg name="local_planner" value="afl_local_planner/AflLocalPlanner"/>
   </include>
 
+  <include file="$(find afl_detection)/launch/rs_l515_bringup.launch">
+    <arg name="output" value="log"/>
+  </include>
 
-  <include file="$(find afl_detection)/launch/rs_l515_bringup.launch"/>
   <include file="$(find afl_detection)/launch/detection_ai.launch"/>
 
   <node pkg="rviz" type="rviz" name="rviz"
