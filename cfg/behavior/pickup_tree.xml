@@ -1,15 +1,18 @@
- <root main_tree_to_execute = "AFL_BT" >
-   <BehaviorTree ID="AFL_BT">
+<root main_tree_to_execute = "AFL_BT" >
+  <BehaviorTree ID="AFL_BT">
     <Sequence name="PickupPallet">
       <DetectionClient
         name="DisableDetection"
         Operation="Disable"/>
       <ForkActionNode
         name="DropFork"
-        TargetHeight="0.02"/>
+        TargetHeight="0.00"/>
       <DetectionClient
         name="EnableDetection"
         Operation="Enable"/>
+      <SleepNode
+        name="WaitForGoodPalletDetection"
+        SleepTimeInSeconds="7.0"/>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
@@ -32,21 +35,27 @@
       <MoveActionNode
         name="ApproachPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="0.40"/>
+        TargetPoseOffset="0.45"/>
       <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="-0.95"/>
+        TargetPoseOffset="-0.85"/>
+      <SleepNode
+        name="SleepBeforePalletPickup"
+        SleepTimeInSeconds="1.0"/>
       <ForkActionNode
         name="PickupPallet"
         TargetHeightOffset="0.2"/>
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="0.9"/>
+        TargetPoseOffset="1.15"/>
+      <SleepNode
+        name="SleepBeforeHeightDescend"
+        SleepTimeInSeconds="1.0"/>
       <ForkActionNode
         name="LowerForkCloseToGround"
         TargetHeight="0.25"/>
     </Sequence>
-   </BehaviorTree>
- </root>
+  </BehaviorTree>
+</root>
