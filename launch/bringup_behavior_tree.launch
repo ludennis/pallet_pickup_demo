@@ -1,10 +1,12 @@
 <launch>
   <arg name="operation" default="pickup"/>
+  <arg name="waypoints_file_path" default="$(find afl_waypoint_recorder)/waypoints/waypoints_0.csv"/>
 
   <node pkg="afl_behavior_tree" type="afl_behavior_tree" name="afl_behavior_tree"
       output="screen">
     <param name="treeConfigPath"
         value="$(find pallet_pickup_demo)/cfg/behavior/$(arg operation)_tree.xml"/>
+    <param name="waypoints_file_path" value="$(arg waypoints_file_path)"/>
     <rosparam command="load"
         file="$(find pallet_pickup_demo)/cfg/behavior/parameters.yaml"/>
   </node>

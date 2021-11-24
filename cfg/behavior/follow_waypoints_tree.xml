@@ -1,0 +1,12 @@
+<root main_tree_to_execute = "AFL_BT">
+  <BehaviorTree ID="AFL_BT">
+    <Sequence>
+      <LoadWaypoints
+        name="LoadWaypoints"
+        Waypoints="{LoadedWaypoints}"/>
+      <MoveActionNode
+        name="FollowWaypoints"
+        Waypoints="{LoadedWaypoints}"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
