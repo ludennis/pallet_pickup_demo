@@ -1,0 +1,15 @@
+<launch>
+  <node pkg="cartographer_ros" type="cartographer_node" name="cartographer_mapping"
+      args="-configuration_directory $(find pallet_pickup_demo)/cfg/mapping
+          -configuration_basename cartographer_mapping.lua" output="screen">
+    <remap from="scan" to="/pepperl_fuchs_r2000/scan"/>
+    <remap from="odom" to="odom"/>
+    <remap from="imu" to="imu"/>
+  </node>
+
+  <node pkg="cartographer_ros" type="cartographer_occupancy_grid_node" name=
+      "cartographer_occupancy_grid_node" args="-resolution 0.05"/>
+
+  <include file="$(find afl_sensors)/launch/bringup_sensors.launch"/>
+  <include file="$(find afl_bringup)/launch/afl_static_tf.launch"/>
+</launch>
