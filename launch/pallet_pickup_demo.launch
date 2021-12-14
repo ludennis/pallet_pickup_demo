@@ -4,7 +4,8 @@
 
   <include file="$(find map_manager_server)/launch/map_manager_server.launch">
     <arg name="open_modifier" value="true"/>
-    <arg name="map_path" value="$(find pallet_pickup_demo)/maps/q_lab.yaml"/>
+    <arg name="map_path" value=
+        "$(find pallet_pickup_demo)/maps/qlab_with_garage_finsih_trajectory.yaml"/>
   </include>
 
   <include file="$(find soter_way_points_navigation)/launch/way_points_navigation.launch"/>
@@ -27,9 +28,7 @@
 
   <param name="velocity" value="0.6"/>
   <param name="lookahead_distance" value="1.5"/>
-  <include file="$(find pallet_pickup_demo)/launch/bringup_navigation.launch">
-    <arg name="local_planner" value="afl_local_planner/AflLocalPlanner"/>
-  </include>
+  <include file="$(find pallet_pickup_demo)/launch/bringup_navigation.launch"/>
 
   <include file="$(find afl_detection)/launch/rs_l515_bringup.launch">
     <arg name="output" value="log"/>
