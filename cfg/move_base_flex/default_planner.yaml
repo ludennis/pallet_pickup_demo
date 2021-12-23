@@ -1,2 +1,3 @@
 base_global_planner: GlobalPlanner
-base_local_planner: TebLocalPlannerROS
+base_local_planner: AflLocalPlanner
+#base_local_planner: TebLocalPlannerROS

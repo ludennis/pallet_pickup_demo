@@ -1,6 +1,4 @@
 <launch>
-  <arg name="local_planner" default="base_local_planner/TrajectoryPlannerROS"/>
-
   <node pkg="mbf_costmap_nav" type="mbf_costmap_nav" name="move_base_flex"
       respawn="false" output="screen">
     <rosparam command="load" ns="global_costmap"
