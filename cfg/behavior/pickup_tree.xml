@@ -1,37 +1,21 @@
 <root main_tree_to_execute = "AFL_BT">
   <BehaviorTree ID="AFL_BT">
     <Sequence name="PickupPallet">
-      <DetectionClient
-        name="DisableDetection"
-        Operation="Disable"/>
-      <ForkActionNode
-        name="DropFork"
-        TargetHeight="0.00"/>
-      <DetectionClient
-        name="EnableDetection"
-        Operation="Enable"/>
-      <SleepNode
-        name="WaitForGoodPalletDetection"
-        SleepTimeInSeconds="7.0"/>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
         MapTfName="map"
         PalletPose="{DetectedPalletPose}"/>
-      <DetectionClient
-        name="DisableDetection"
-        Operation="Disable"/>
       <ForkActionNode
         name="RaiseForkToPalletHeight"
         PalletPose="{DetectedPalletPose}"
-        PalletThickness="0.12"
-        PalletBottomPadding="0.012"
+        PalletThickness="0.155"
+        PalletBottomPadding="0.025"
         AscendingOvershootOffset="0.15"
         TickDescendHeight="{TickDescendHeight}"/>
       <ForkTickDescend
         name="ForkTickDescendToPalletHeight"
-        TargetHeight="{TickDescendHeight}"
-        TargetHeightOffset="0.008"/>
+        TargetHeight="{TickDescendHeight}"/>
       <MoveActionNode
         name="ApproachPallet"
         TargetPose="{DetectedPalletPose}"
@@ -39,7 +23,7 @@
       <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="-0.85"/>
+        TargetPoseOffset="-0.65"/>
       <SleepNode
         name="SleepBeforePalletPickup"
         SleepTimeInSeconds="1.0"/>
@@ -49,13 +33,13 @@
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="1.15"/>
+        TargetPoseOffset="1.6"/>
       <SleepNode
         name="SleepBeforeHeightDescend"
         SleepTimeInSeconds="1.0"/>
       <ForkActionNode
         name="LowerForkCloseToGround"
-        TargetHeight="0.25"/>
+        TargetHeight="0.1"/>
     </Sequence>
   </BehaviorTree>
 </root>
