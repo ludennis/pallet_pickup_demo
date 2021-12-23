@@ -1,7 +1,7 @@
 #---standard pioneer footprint---
 # map_type: costmap
 transform_tolerance: 0.2
-footprint: [[-0.3,-0.55],[1.7,-0.55],[1.7,0.55],[-0.3,0.55]]
+footprint: [[-0.3,-0.5],[1.7,-0.5],[1.7,0.5],[-0.3,0.5]]
 
 obstacle_layer:
   enabled: true
