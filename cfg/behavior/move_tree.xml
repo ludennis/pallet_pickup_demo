@@ -1,0 +1,14 @@
+<root main_tree_to_execute = "Move">
+  <BehaviorTree ID="Move">
+    <Sequence>
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-1.39787757397"
+        TargetPositionY="-2.61510062218"
+        TargetQuaternionZ="-0.106982015314"
+        TargetQuaternionW="0.994260955886"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

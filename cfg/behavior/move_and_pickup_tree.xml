@@ -1,0 +1,20 @@
+<root main_tree_to_execute="MoveAndPickupPallet">
+  <include path="move_tree.xml"/>
+  <include path="pickup_tree.xml"/>
+
+  <BehaviorTree ID="MoveAndPickupPallet">
+    <Sequence>
+      <DetectionClient
+        name="DisableDetection"
+        Operation="Disable"/>
+      <SubTree ID="Move"/>
+      <DetectionClient
+        name="EnableDetection"
+        Operation="Enable"/>
+      <SleepNode
+        name="SleepUntilCorrectDetection"
+        SleepTimeInSeconds="10.0"/>
+      <SubTree ID="PickupPallet"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

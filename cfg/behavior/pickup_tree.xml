@@ -1,6 +1,6 @@
-<root main_tree_to_execute = "AFL_BT">
-  <BehaviorTree ID="AFL_BT">
-    <Sequence name="PickupPallet">
+<root main_tree_to_execute = "PickupPallet">
+  <BehaviorTree ID="PickupPallet">
+    <Sequence>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
