@@ -281,7 +281,7 @@ Visualization Manager:
       Color: 52; 101; 164
       Enabled: true
       Name: Polygon
-      Topic: /move_base/global_costmap/footprint
+      Topic: /move_base_flex/local_costmap/footprint
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -478,7 +478,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -0.13499987125396729
+      Angle: 1.454999327659607
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -488,11 +488,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 146.28948974609375
+      Scale: 268.5496826171875
       Target Frame: base_footprint
       Value: TopDownOrtho (rviz)
-      X: -0.8603417873382568
-      Y: 1.2881076335906982
+      X: 1.7194148302078247
+      Y: -0.15072378516197205
     Saved: ~
 Window Geometry:
   Displays:
