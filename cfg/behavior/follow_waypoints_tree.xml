@@ -6,7 +6,9 @@
         Waypoints="{LoadedWaypoints}"/>
       <MoveActionNode
         name="FollowWaypoints"
-        Waypoints="{LoadedWaypoints}"/>
+        Waypoints="{LoadedWaypoints}"
+        Controller="AflLocalPlanner"
+        Planner="GlobalPlanner"/>
     </Sequence>
   </BehaviorTree>
 </root>

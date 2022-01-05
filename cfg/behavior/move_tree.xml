@@ -1,6 +1,7 @@
 <root main_tree_to_execute = "Move">
   <BehaviorTree ID="Move">
     <Sequence>
+<!--
       <MoveToTargetGlobalPose
         name="MoveToPickupPose"
         TargetPositionX="-1.39787757397"

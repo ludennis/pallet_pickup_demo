@@ -7,14 +7,18 @@
       <MoveActionNode
         name="ApproachPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="0.40"/>
+        TargetPoseOffset="0.40"
+        Controller="AflLocalPlanner"
+        Planner="GlobalPlanner"/>
       <SleepNode
         name="SleepBeforeReleaseBrake"
         SleepTimeInSeconds="0.5"/>
       <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="-0.75"/>
+        TargetPoseOffset="-0.75"
+        Controller="AflLocalPlanner"
+        Planner="GlobalPlanner"/>
       <SleepNode
         name="SleepBeforePalletPickup"
         SleepTimeInSeconds="1.0"/>
@@ -24,7 +28,9 @@
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="1.2"/>
+        TargetPoseOffset="1.2"
+        Controller="AflLocalPlanner"
+        Planner="GlobalPlanner"/>
       <SleepNode
         name="SleepBeforeHeightDescend"
         SleepTimeInSeconds="1.0"/>
