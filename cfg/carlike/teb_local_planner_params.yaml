@@ -3,10 +3,10 @@ TebLocalPlannerROS:
   odom_topic: odom
 
   # Robot
-  max_vel_x: 0.5
+  max_vel_x: 0.6
   max_vel_x_backwards: 0.5
   max_vel_theta: 0.8
-  acc_lim_x: 0.5
+  acc_lim_x: 0.6
   acc_lim_theta: 0.8
   is_footprint_dynamic: false
   use_proportional_saturation: false
@@ -23,8 +23,8 @@ TebLocalPlannerROS:
     line_end: [1.5, 0.0]
 
   # Goal Tolerance
-  xy_goal_tolerance: 0.05
-  yaw_goal_tolerance: 0.06
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.05
   free_goal_vel: false
   trans_stopped_vel: 0.1
   theta_stopped_vel: 0.1
@@ -37,7 +37,7 @@ TebLocalPlannerROS:
   min_samples: 3
   max_samples: 500
   global_plan_overwrite_orientation: true
-  allow_init_with_backwards_motion: true
+  allow_init_with_backwards_motion: false
   max_global_plan_lookahead_dist: 2.0
   global_plan_prune_distance: 1.0
   force_reinit_new_goal_dist: 1.2
