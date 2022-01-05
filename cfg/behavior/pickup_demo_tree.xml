@@ -1,0 +1,47 @@
+<root main_tree_to_execute="MoveAndPickupPallet">
+  <include path="move_tree.xml"/>
+  <include path="pickup_tree.xml"/>
+
+  <BehaviorTree ID="MoveAndPickupPallet">
+    <Sequence>
+      <DetectionClient
+        name="DisableDetection"
+        Operation="Disable"/>
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-20.2281780243"
+        TargetPositionY="-12.1275529861"
+        TargetQuaternionZ="-0.082875692895"
+        TargetQuaternionW="0.996559892594"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+<!--
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-20.4607086182"
+        TargetPositionY="-12.0508699417"
+        TargetQuaternionZ="-0.0873488798196"
+        TargetQuaternionW="0.996177781922"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+-->
+<!--
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-20.8725566864"
+        TargetPositionY="-11.9541358948"
+        TargetQuaternionZ="-0.0926143141874"
+        TargetQuaternionW="0.995702058252"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+-->
+      <DetectionClient
+        name="EnableDetection"
+        Operation="Enable"/>
+      <SleepNode
+        name="SleepUntilCorrectDetection"
+        SleepTimeInSeconds="10.0"/>
+      <SubTree ID="PickupPallet"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
