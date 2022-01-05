@@ -12,11 +12,8 @@
     <rosparam command="load"
         file="$(find pallet_pickup_demo)/cfg/carlike/teb_local_planner_params.yaml"/>
     <rosparam command="load"
-        file="$(find pallet_pickup_demo)/cfg/move_base_flex/move_base_flex.yaml"/>
-  </node>
-
-  <node pkg="mbf_costmap_nav" type="move_base_legacy_relay.py" name="move_base_legacy_relay">
+        file="$(find pallet_pickup_demo)/cfg/carlike/recovery_behaviors.yaml"/>
     <rosparam command="load"
-        file="$(find pallet_pickup_demo)/cfg/move_base_flex/default_planner.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/move_base_flex/move_base_flex.yaml"/>
   </node>
 </launch>
