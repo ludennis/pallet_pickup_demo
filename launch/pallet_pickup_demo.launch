@@ -13,13 +13,13 @@
   <node pkg="soter_global_localization" type="soter_global_localization_node"
       name="soter_global_localization_node" output="screen">
     <rosparam command="load"
-        file="$(find pallet_pickup_demo)/cfg/soter_global_localization.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/localization/soter_global_localization.yaml"/>
   </node>
 
   <node pkg="soter_local_localization" type="soter_local_localization_node"
       name="soter_local_localization_node" output="screen">
     <rosparam command="load"
-        file="$(find pallet_pickup_demo)/cfg/soter_local_localization.yaml"/>
+        file="$(find pallet_pickup_demo)/cfg/localization/soter_local_localization.yaml"/>
   </node>
 
   <include file="$(find afl_teleop)/launch/afl_teleop_keyboard.launch"/>
@@ -37,5 +37,5 @@
   <include file="$(find afl_detection)/launch/detection_ai.launch"/>
 
   <node pkg="rviz" type="rviz" name="rviz"
-      args="-d $(find pallet_pickup_demo)/cfg/pallet_pickup_demo.rviz"/>
+      args="-d $(find pallet_pickup_demo)/cfg/rviz/pallet_pickup_demo.rviz"/>
 </launch>
