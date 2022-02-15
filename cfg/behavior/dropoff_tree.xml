@@ -1,42 +1,31 @@
 <root main_tree_to_execute = "AFL_BT" >
   <BehaviorTree ID="AFL_BT">
-    <Sequence name="PickupPallet">
+    <Sequence name="DropoffPallet">
+      <WaitForAprilTagDetection
+        name="WaitForAprilTag"
+        AprilTagTfName="Dropoff"
+        MapTfName="map"
+        AprilTagPose="{DetectedDropoffPose}"/>
       <ForkActionNode
-        name="RaiseForkToPalletHeight"
-        TargetHeight="1.0"/>
+        name="RaiseForkAboveDropoffPose"
+        DropoffPose="{DetectedDropoffPose}"/>
       <MoveActionNode
-        name="ApproachPallet"
-        TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="0.40"
-        Controller="AflLocalPlanner"
-        Planner="GlobalPlanner"/>
-      <SleepNode
-        name="SleepBeforeReleaseBrake"
-        SleepTimeInSeconds="0.5"/>
-      <MoveActionNode
-        name="InsertForkThroughPallet"
-        TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="-0.75"
-        Controller="AflLocalPlanner"
-        Planner="GlobalPlanner"/>
-      <SleepNode
-        name="SleepBeforePalletPickup"
-        SleepTimeInSeconds="1.0"/>
+        name="ApproachDropoffPose"
+        TargetPose="{DetectedDropoffPose}"
+        TargetPoseOffset="-0.65"/>
       <ForkActionNode
-        name="PickupPallet"
-        TargetHeightOffset="0.2"/>
+        name="Dropoff"
+        TargetHeightOffset="-0.8"/>
       <MoveActionNode
         name="BackAway"
-        TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="1.2"
-        Controller="AflLocalPlanner"
-        Planner="GlobalPlanner"/>
+        TargetPose="{DetectedDropoffPose}"
+        TargetPoseOffset="1.6"/>
       <SleepNode
         name="SleepBeforeHeightDescend"
         SleepTimeInSeconds="1.0"/>
       <ForkActionNode
         name="LowerForkCloseToGround"
-        TargetHeight="0.25"/>
+        TargetHeight="0.1"/>
     </Sequence>
   </BehaviorTree>
 </root>
