@@ -36,6 +36,8 @@
 
   <include file="$(find afl_detection)/launch/detection_ai.launch"/>
 
+  <include file="$(find pallet_pickup_demo)/launch/continuous_detection.launch"/>
+
   <node pkg="rviz" type="rviz" name="rviz"
       args="-d $(find pallet_pickup_demo)/cfg/rviz/pallet_pickup_demo.rviz"/>
 </launch>
