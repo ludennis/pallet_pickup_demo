@@ -1,28 +1,43 @@
 <root main_tree_to_execute = "AFL_BT" >
   <BehaviorTree ID="AFL_BT">
     <Sequence name="DropoffPallet">
+      <ForkActionNode
+        name="LowerForkCloseToGround"
+        TargetHeight="0.1"/>
+      <SleepNode
+        name="SleepBeforePalletPickup"
+        SleepTimeInSeconds="3.0"/>
       <WaitForAprilTagDetection
         name="WaitForAprilTag"
         AprilTagTfName="Dropoff"
         MapTfName="map"
+        Offset="0.26"
         AprilTagPose="{DetectedDropoffPose}"/>
       <ForkActionNode
         name="RaiseForkAboveDropoffPose"
-        DropoffPose="{DetectedDropoffPose}"/>
+        PalletPose="{DetectedDropoffPose}"
+        PalletThickness="0.155"
+        PalletBottomPadding="0.025"
+        AscendingOvershootOffset="0.15"
+        TickDescendHeight="{TickDescendHeight}"/>
       <MoveActionNode
-        name="ApproachDropoffPose"
+        name="MoveOnTopOfDropoffPose"
         TargetPose="{DetectedDropoffPose}"
-        TargetPoseOffset="-0.65"/>
-      <ForkActionNode
-        name="Dropoff"
-        TargetHeightOffset="-0.8"/>
+        TargetPoseOffset="-0.65"
+        Controller="AflLocalPlanner"
+        Planner="GlobalPlanner"/>
+      <ForkTickDescend
+        name="ForkTickDescendToDropoffPose"
+        TargetHeight="{TickDescendHeight}"/>
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedDropoffPose}"
-        TargetPoseOffset="1.6"/>
+        TargetPoseOffset="1.6"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
       <SleepNode
         name="SleepBeforeHeightDescend"
-        SleepTimeInSeconds="1.0"/>
+        SleepTimeInSeconds="2.0"/>
       <ForkActionNode
         name="LowerForkCloseToGround"
         TargetHeight="0.1"/>
