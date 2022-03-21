@@ -1,12 +1,12 @@
-<root main_tree_to_execute = "AFL_BT" >
-  <BehaviorTree ID="AFL_BT">
-    <Sequence name="DropoffPallet">
+<root main_tree_to_execute = "DropoffPallet" >
+  <BehaviorTree ID="DropoffPallet">
+    <Sequence>
       <ForkActionNode
         name="LowerForkCloseToGround"
         TargetHeight="0.1"/>
       <SleepNode
         name="SleepBeforePalletPickup"
-        SleepTimeInSeconds="3.0"/>
+        SleepTimeInSeconds="4.0"/>
       <WaitForAprilTagDetection
         name="WaitForAprilTag"
         AprilTagTfName="Dropoff"
@@ -32,7 +32,7 @@
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedDropoffPose}"
-        TargetPoseOffset="1.6"
+        TargetPoseOffset="1.1"
         Controller="TebLocalPlannerROS"
         Planner="GlobalPlanner"/>
       <SleepNode

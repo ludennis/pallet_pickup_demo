@@ -1,11 +1,26 @@
 <root main_tree_to_execute = "PickupPallet">
   <BehaviorTree ID="PickupPallet">
     <Sequence>
+      <DetectionClient
+        name="RestartPalletDetection"
+        Operation="disable"/>
+      <ForkActionNode
+        name="LowerForkToGround"
+        TargetHeight="0.01"/>
+      <DetectionClient
+        name="EnablePalletDetection"
+        Operation="enable"/>
+      <SleepNode
+        name="SleepBeforePalletDetection"
+        SleepTimeInSeconds="2.0"/>
       <WaitForPalletDetection
         name="WaitForPalletDetection"
         PalletTfName="pallet"
         MapTfName="map"
         PalletPose="{DetectedPalletPose}"/>
+      <DetectionClient
+        name="DisablePalletDetection"
+        Operation="disable"/>
       <ForkActionNode
         name="RaiseForkToPalletHeight"
         PalletPose="{DetectedPalletPose}"
@@ -33,11 +48,11 @@
         SleepTimeInSeconds="1.0"/>
       <ForkActionNode
         name="PickupPallet"
-        TargetHeightOffset="0.2"/>
+        TargetHeightOffset="0.10"/>
       <MoveActionNode
         name="BackAway"
         TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="1.6"
+        TargetPoseOffset="1.05"
         Controller="AflLocalPlanner"
         Planner="GlobalPlanner"/>
       <SleepNode
