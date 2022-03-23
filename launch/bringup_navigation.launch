@@ -12,6 +12,8 @@
     <rosparam command="load"
         file="$(find pallet_pickup_demo)/cfg/carlike/teb_local_planner_params.yaml"/>
     <rosparam command="load"
+        file="$(find pallet_pickup_demo)/cfg/carlike/afl_local_planner_params.yaml"/>
+    <rosparam command="load"
         file="$(find pallet_pickup_demo)/cfg/carlike/recovery_behaviors.yaml"/>
     <rosparam command="load"
         file="$(find pallet_pickup_demo)/cfg/move_base_flex/move_base_flex.yaml"/>

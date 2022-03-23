@@ -1,0 +1,6 @@
+AflLocalPlanner:
+  lookahead_distance: 1.0
+  distance_tolerance: 0.2
+  velocity: 0.3
+  turning_coefficient: 8
+  closeup_turning_coefficient: 0.2

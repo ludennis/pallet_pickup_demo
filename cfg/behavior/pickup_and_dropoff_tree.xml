@@ -1,0 +1,10 @@
+<root main_tree_to_execute="PickupAndDropoff">
+  <include path="pickup_tree.xml"/>
+  <include path="dropoff_tree.xml"/>
+  <BehaviorTree ID="PickupAndDropoff">
+    <Sequence>
+      <SubTree ID="PickupPallet"/>
+      <SubTree ID="DropoffPallet"/>
+    </Sequence>
+  </BehaviorTree>
+</root>

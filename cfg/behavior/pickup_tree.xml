@@ -32,12 +32,6 @@
         name="ForkTickDescendToPalletHeight"
         TargetHeight="{TickDescendHeight}"/>
       <MoveActionNode
-        name="ApproachPallet"
-        TargetPose="{DetectedPalletPose}"
-        TargetPoseOffset="0.45"
-        Controller="AflLocalPlanner"
-        Planner="GlobalPlanner"/>
-      <MoveActionNode
         name="InsertForkThroughPallet"
         TargetPose="{DetectedPalletPose}"
         TargetPoseOffset="-0.65"
