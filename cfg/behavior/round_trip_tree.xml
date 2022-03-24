@@ -1,0 +1,51 @@
+<root main_tree_to_execute = "Round_Trip">
+  <BehaviorTree ID="Round_Trip">
+    <Sequence>
+      <MoveToTargetGlobalPose
+        name="MoveToPose1"
+        TargetPositionX="-6.14023733139"
+        TargetPositionY="-14.4373016357"
+        TargetQuaternionZ="-0.0925712709808"
+        TargetQuaternionW="0.995706060938"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+
+      <MoveToTargetGlobalPose
+        name="MoveToPose2"
+        TargetPositionX="-2.05884504318"
+        TargetPositionY="-28.9200668335"
+        TargetQuaternionZ="-0.771800447258"
+        TargetQuaternionW="0.635864820235"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+
+      <MoveToTargetGlobalPose
+        name="MoveToPose3"
+        TargetPositionX="-21.4539527893"
+        TargetPositionY="-29.6834468842"
+        TargetQuaternionZ="0.993806070012"
+        TargetQuaternionW="0.111128282665"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+
+      <MoveToTargetGlobalPose
+        name="MoveToPose4"
+        TargetPositionX="-22.6678619385"
+        TargetPositionY="-16.9540023804"
+        TargetQuaternionZ="0.630699749018"
+        TargetQuaternionW="0.776026949654"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-20.4607086182"
+        TargetPositionY="-12.0508699417"
+        TargetQuaternionZ="-0.0873488798196"
+        TargetQuaternionW="0.996177781922"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+
+    </Sequence>
+  </BehaviorTree>
+</root>
