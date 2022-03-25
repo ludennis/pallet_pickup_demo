@@ -1,5 +1,5 @@
-<root main_tree_to_execute = "Round_Trip">
-  <BehaviorTree ID="Round_Trip">
+<root main_tree_to_execute = "RoundTrip">
+  <BehaviorTree ID="RoundTrip">
     <Sequence>
       <MoveToTargetGlobalPose
         name="MoveToPose1"
@@ -38,7 +38,7 @@
         Planner="GlobalPlanner"/>
 
       <MoveToTargetGlobalPose
-        name="MoveToPickupPose"
+        name="MoveBackToPickupPose"
         TargetPositionX="-20.4607086182"
         TargetPositionY="-12.0508699417"
         TargetQuaternionZ="-0.0873488798196"

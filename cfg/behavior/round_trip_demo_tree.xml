@@ -1,0 +1,21 @@
+<root main_tree_to_execute="RoundTripDemo">
+  <include path="pickup_tree.xml"/>
+  <include path="dropoff_tree.xml"/>
+  <include path="round_trip_tree.xml"/>
+
+  <BehaviorTree ID="RoundTripDemo">
+    <Sequence>
+      <MoveToTargetGlobalPose
+        name="MoveToPickupPose"
+        TargetPositionX="-1.39787757397"
+        TargetPositionY="-2.61510062218"
+        TargetQuaternionZ="-0.106982015314"
+        TargetQuaternionW="0.994260955886"
+        Controller="TebLocalPlannerROS"
+        Planner="GlobalPlanner"/>
+      <SubTree ID="PickupPallet"/>
+      <SubTree ID="RoundTrip"/>
+      <SubTree ID="DropoffPallet"/>
+    </Sequence>
+  </BehaviorTree>
+</root>
